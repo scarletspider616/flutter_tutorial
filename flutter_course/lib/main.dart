@@ -10,6 +10,8 @@ class CourseApp extends StatefulWidget {
 }
 
 class _CourseAppState extends State<CourseApp> {
+  List<String> _superheroes = ['Scarlet Spider'];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,13 +28,14 @@ class _CourseAppState extends State<CourseApp> {
                 child: Text("Add Superhero"),
               ),
             ),
-            Card(
+            _superheroes.map((element) => Card(
               child: Column(
                 children: <Widget>[
                   Image.asset("assets/images/scarlet_spider.png"),
-                  Text("Scarlet Spider")
+                  Text(element)
                 ],
               ),
+            )
             )
           ],
         ),
